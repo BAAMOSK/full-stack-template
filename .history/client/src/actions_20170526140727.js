@@ -17,10 +17,10 @@ export const error = (err) => ({
 
 export const fetchData = () =>{
   return dispatch => {
-    dispatch(requestData());
 
   fetch('http://localhost:8080/api')
   .then(res => res.json())
-  .then(res => dispatch(recieveData(res)));
+  .then(res => dispatch(recieveData(res.data)))
+  .catch(err => err);
   };
 };

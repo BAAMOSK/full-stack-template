@@ -1,3 +1,4 @@
+import {addItem} from '../actions';
 const initialState = {
   data:[],
   loading: false,
@@ -7,21 +8,19 @@ const initialState = {
 export default (state=initialState, action) => {
   switch(action.type){
     case 'REQUEST_DATA':
-      return {
+      return ({
         ...state,
         loading: true
-      }
+      })
     case 'RECIEVE_DATA':
-      return {
-        ...state,
+      return ({
         data: action.data,
         loading: false
-      }
+      })
     case 'ERROR':
-      return {
-        ...state,
-        err: action.err
-      }
+      return ({
+        error: true
+      })
 
     default: return state;
   }

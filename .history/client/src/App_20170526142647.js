@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'react-redux';
 import {fetchData} from './actions';
-import CheeseList from './components/cheese-list';
 
 
 class App extends Component {
@@ -25,14 +24,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CheeseList />
+        <ul>
+
+{this.props.data.map((item, index) => <li key={index}>{item}</li>)}
+
+
+        </ul>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
+const mapStateToProps = (state) =>   return {
     data: state.parts.data
   };
 }

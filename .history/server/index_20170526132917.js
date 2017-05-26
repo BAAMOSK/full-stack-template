@@ -12,26 +12,9 @@ app.use(function(req, res, next) {
 // API endpoints go here!
 
 app.get('/api', (req, res)=>{
-  const response = [
-    "Bath Blue",
-    "Barkham Blue",
-    "Buxton Blue",
-    "Cheshire Blue",
-    "Devon Blue",
-    "Dorset Blue Vinney",
-    "Dovedale",
-    "Exmoor Blue",
-    "Harbourne Blue",
-    "Lanark Blue",
-    "Lymeswold",
-    "Oxford Blue",
-    "Shropshire Blue",
-    "Stichelton",
-    "Stilton",
-    "Blue Wensleydale",
-    "Yorkshire Blue"
-]
-
+  let response = {
+    parts:['GTX 1080', 'i7 6700k', 'Pentium 3', 'Core 2 Duo']
+  };
   res.json(response);
 });
 

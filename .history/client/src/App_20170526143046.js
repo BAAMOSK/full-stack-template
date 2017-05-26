@@ -25,7 +25,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CheeseList />
+        <ul>
+
+{this.props.data.map((item, index) => <li key={index}>{item}</li>)}
+
+
+        </ul>
       </div>
     );
   }

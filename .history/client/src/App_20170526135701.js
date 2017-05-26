@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'react-redux';
 import {fetchData} from './actions';
-import CheeseList from './components/cheese-list';
+let display = [];
 
 
 class App extends Component {
@@ -25,16 +25,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <CheeseList />
+        <ul>
+{this.props.data.map((item, index) => <li key={index}>{item[index]}</li>)}
+        {console.log(this.props.data)}
+
+        </ul>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.parts.data
-  };
-}
+const mapStateToProps = (state) => ({
+  data: state.parts.data
+});
 
 export default connect(mapStateToProps)(App);

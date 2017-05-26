@@ -1,3 +1,4 @@
+import { RECIEVE_DATA, REQUEST_DATA, ERROR, recieveData, requestData, error } from '../actions';
 const initialState = {
   data:[],
   loading: false,
