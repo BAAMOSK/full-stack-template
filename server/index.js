@@ -12,9 +12,11 @@ app.use(function(req, res, next) {
 // API endpoints go here!
 
 app.get('/api', (req, res)=>{
-  let response = {
-    data:['GTX 1080', 'i7 6700k', 'Pentium 3', 'Core 2 Duo']
-  };
+  const response = [{name:'GTX 1080'},
+                 {name:'i7 6700k'},
+                 {name:'Pentium 3'}, 
+                 {name:'Core 2 Duo'}];
+
   res.json(response);
 });
 

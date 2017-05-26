@@ -8,20 +8,21 @@ const initialState = {
 export default (state=initialState, action) => {
   switch(action.type){
     case 'REQUEST_DATA':
-      return ({
+      return {
         ...state,
         loading: true
-      })
+      }
     case 'RECIEVE_DATA':
-      return ({
+      return {
         ...state,
-        data: [...state.data, action.data],
+        data: action.data,
         loading: false
-      })
+      }
     case 'ERROR':
-      return ({
-        error: true
-      })
+      return {
+        ...state,
+        err: action.err
+      }
 
     default: return state;
   }

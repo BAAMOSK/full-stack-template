@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import {connect} from 'react-redux';
 import {fetchData} from './actions';
-let display = [];
 
 
 class App extends Component {
@@ -26,8 +25,9 @@ class App extends Component {
     return (
       <div className="App">
         <ul>
-{this.props.data.map((item, index) => <li key={index}>{item[index]}</li>)}
-        {console.log(this.props.data)}
+        
+{this.props.data.map((item, index) => <li key={index}>{item.name}</li>)}
+
 
         </ul>
       </div>
@@ -35,8 +35,11 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  data: state.parts.data
-});
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    data: state.parts.data
+  };
+}
 
 export default connect(mapStateToProps)(App);
