@@ -9,7 +9,7 @@ class App extends Component {
   const parts = fetchData();
   this.props.dispatch(fetchData());
   console.log(this.props.data);
-  }
+  };
 
   render() {
     return (

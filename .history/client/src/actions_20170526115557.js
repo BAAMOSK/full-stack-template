@@ -21,7 +21,7 @@ export const fetchData = () =>{
 
     fetch('http://localhost:8080/api')
   .then(res => res.json())
-  .then(data => dispatch(recieveData(data)))
+  .then(data => recieveData(data))
   .catch(err => dispatch(error(err)));
   };
 };

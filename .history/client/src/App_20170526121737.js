@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <ul>{this.test}</ul>
+        <ul>{test}</ul>
       </div>
     );
   }

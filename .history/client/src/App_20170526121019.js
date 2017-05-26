@@ -7,14 +7,13 @@ import {fetchData} from './actions';
 class App extends Component {
   test(){
   const parts = fetchData();
-  this.props.dispatch(fetchData());
   console.log(this.props.data);
-  }
+  };
 
   render() {
     return (
       <div className="App">
-        <ul>{this.test}</ul>
+        <ul>{test()}</ul>
       </div>
     );
   }
